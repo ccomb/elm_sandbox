@@ -1,5 +1,6 @@
 import Html exposing (div, Html, button, text)
 import Html.App as App
+import Html.Events exposing (onClick)
 
 -- MODEL
 
@@ -25,12 +26,12 @@ update msg model =
 
 -- VIEW
 
-view : Model -> Html a
+view : Model -> Html Msg
 view model =
     div [] [
-        button [] [text "+"]
+        button [ onClick Increment ] [text "+"]
         , div [] [text (toString model.counter)]
-        , button [] [text "-"]
+        , button [onClick Decrement] [text "-"]
     ]
 
 main = App.beginnerProgram { model = model, update = update, view = view }
