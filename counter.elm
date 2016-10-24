@@ -17,12 +17,10 @@ type Msg =
 
 update : Msg -> Model -> Model
 update msg model =
-    if msg == Increment
-    then { model | counter = model.counter + 1 }
-    else
-        if msg == Decrement
-        then { model | counter = model.counter - 1 }
-        else { counter = 0 }
+    case msg of
+        Increment -> { model | counter = model.counter + 1 }
+        Decrement -> { model | counter = model.counter - 1 }
+        Reset -> { counter = 0 }
 
 -- VIEW
 
@@ -32,6 +30,7 @@ view model =
         button [ onClick Increment ] [text "+"]
         , div [] [text (toString model.counter)]
         , button [onClick Decrement] [text "-"]
+        , button [onClick Reset] [text "reset"]
     ]
 
 main = App.beginnerProgram { model = model, update = update, view = view }
