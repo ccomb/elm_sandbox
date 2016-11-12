@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>tuto Elm</title>
+  <script type="text/javascript" src="counter.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+<!-- MDL -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+ <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.grey-pink.min.css" /> 
+</head>
+
+<body>
+<div id="main"/>
+
+<script>
+    var node = document.getElementById('main');
+    var app = Elm.Main.embed(node);
+    // Note: if your Elm module is named "MyThing.Root" you
+    // would call "Elm.MyThing.Root.embed(node)" instead.
+</script>
+</body>
+
+</html>
