@@ -30,9 +30,9 @@ mdlButtonClass =
     classList [
        ("mdl-button", True),
        ("mdl-js-button", True),
-       ("mdl-button--raised", True),
+       ("mdl-button--raised", False),
        ("mdl-js-ripple-effect", True),
-       ("mdl-button--accent", True)
+       ("mdl-button--accent", False)
     ]
 
 view : Model -> Html Msg
