@@ -5,11 +5,10 @@ import Html.Attributes exposing (classList)
 
 -- MODEL
 
-type alias Model =
-    { counter : Int }
+type alias Model = Int
 
 model: Model
-model = { counter = 0 }
+model = 0
 
 -- UPDATE
 
@@ -19,9 +18,9 @@ type Msg =
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        Increment -> { model | counter = model.counter + 1 }
-        Decrement -> { model | counter = model.counter - 1 }
-        Reset -> { counter = 0 }
+        Increment -> model + 1
+        Decrement -> model - 1
+        Reset -> 0
 
 -- VIEW
 
@@ -29,7 +28,7 @@ mdlButtonClass : Attribute Msg
 mdlButtonClass = 
     classList
         [("mdl-button", True)
-        ,("mdl-js-button", True),
+        ,("mdl-js-button", True)
         ,("mdl-button--raised", False)
         ,("mdl-js-ripple-effect", True)
         ,("mdl-button--accent", False)]
@@ -37,7 +36,7 @@ mdlButtonClass =
 view : Model -> Html Msg
 view model =
     div [] [button [ onClick Increment, mdlButtonClass] [text "+"]
-           ,div [] [text (toString model.counter)]
+           ,div [] [text (toString model)]
            ,button [onClick Decrement, mdlButtonClass] [text "-"]
            ,button [onClick Reset, mdlButtonClass] [text "reset"]
     ]
