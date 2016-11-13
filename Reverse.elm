@@ -1,8 +1,11 @@
+module Reverse exposing (Model, Msg, model, update, view)
+
 import Html exposing (div, Html, button, input, text, Attribute, label)
 import Html.App as App
 import Html.Events exposing (onInput)
 import Html.Attributes exposing (style, type', classList)
 import String exposing (reverse)
+
 
 -- MODEL
 type alias Model = String
@@ -47,5 +50,4 @@ view model =
         , div [style [("color","red")]] [text (reverse model)]
     ]
 
--- MAIN
-main = App.beginnerProgram {model=model, update=update, view=view}
+main = App.beginnerProgram { model = model, update = update, view = view }
