@@ -1,7 +1,8 @@
 {
     "version": "1.0.0",
     "summary": "sandbox to learn Elm",
-    "repository": "https://bitbucket.org/ccomb/elm_sandbox",
+    "repository": "https://github.com/user/project.git",
+    "real-repository": "https://bitbucket.org/ccomb/elm_sandbox",
     "license": "AGPLv3",
     "source-directories": [
         "."
