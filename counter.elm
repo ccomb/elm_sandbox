@@ -27,21 +27,19 @@ update msg model =
 
 mdlButtonClass : Attribute Msg
 mdlButtonClass = 
-    classList [
-       ("mdl-button", True),
-       ("mdl-js-button", True),
-       ("mdl-button--raised", False),
-       ("mdl-js-ripple-effect", True),
-       ("mdl-button--accent", False)
-    ]
+    classList
+        [("mdl-button", True)
+        ,("mdl-js-button", True),
+        ,("mdl-button--raised", False)
+        ,("mdl-js-ripple-effect", True)
+        ,("mdl-button--accent", False)]
 
 view : Model -> Html Msg
 view model =
-    div [] [
-        button [ onClick Increment, mdlButtonClass] [text "+"]
-        , div [] [text (toString model.counter)]
-        , button [onClick Decrement, mdlButtonClass] [text "-"]
-        , button [onClick Reset, mdlButtonClass] [text "reset"]
+    div [] [button [ onClick Increment, mdlButtonClass] [text "+"]
+           ,div [] [text (toString model.counter)]
+           ,button [onClick Decrement, mdlButtonClass] [text "-"]
+           ,button [onClick Reset, mdlButtonClass] [text "reset"]
     ]
 
 main = App.beginnerProgram { model = model, update = update, view = view }
